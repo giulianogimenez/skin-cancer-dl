@@ -78,7 +78,7 @@ public class TrainUsingZoo {
         DataSetIterator trainDataSet = new RecordReaderDataSetIterator(trainReader, MINI_BATCH_SIZE, 1, N_LABELS);
         DataSetIterator testDataSet = new RecordReaderDataSetIterator(testReader, MINI_BATCH_SIZE, 1, N_LABELS);
 
-        ZooModel<?> zooModel = new ResNet50(N_LABELS, SEED, 1);
+        ZooModel<?> zooModel = new ResNet50(N_LABELS, SEED, 1);fr
         ComputationGraph initializedZooModel  = (ComputationGraph) zooModel.initPretrained(PretrainedType.IMAGENET);
         FineTuneConfiguration fineTuneConf = new FineTuneConfiguration.Builder()
                 .learningRate(0.0001)
