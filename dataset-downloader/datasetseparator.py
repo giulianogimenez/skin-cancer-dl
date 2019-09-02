@@ -9,7 +9,7 @@ class DatasetSeparator():
         m_testset_count = int((malignant_count * 20) / 100)
         m_trainset_count = malignant_count - m_testset_count
         i = 1
-        for i in range(1, m_testset_count):
+        for i in range(0, m_testset_count):
             m_file = os.listdir(os.getenv("DATASET_PATH") + "malignant")[0]
             m_origin = os.getenv("DATASET_PATH") + "malignant/" + m_file
             m_destiny = os.getenv("DATASET_PATH") + "testset/malignant/" + m_file
@@ -19,7 +19,7 @@ class DatasetSeparator():
             b_destiny = os.getenv("DATASET_PATH") + "testset/benign/" + b_file
             os.rename(b_origin, b_destiny)
         print("moved " + str(i) + " files to testset")
-        for i in range(1, m_trainset_count):
+        for i in range(0, m_trainset_count):
             m_file = os.listdir(os.getenv("DATASET_PATH") + "malignant")[0]
             m_origin = os.getenv("DATASET_PATH") + "malignant/" + m_file
             m_destiny = os.getenv("DATASET_PATH") + "trainset/malignant/" + m_file
