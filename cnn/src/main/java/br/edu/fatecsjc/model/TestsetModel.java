@@ -20,7 +20,7 @@ public class TestsetModel implements ConfigInterface {
 	ImageRecordReader testReader;
 	
 	public TestsetModel() throws IOException {
-		File cancerTrainRootDir = Paths.get("C:\\cancer\\test").toFile();
+		File cancerTrainRootDir = Paths.get("/Users/giulianogimenez/Documents/isic/testset").toFile();
 		InputSplit trainData = new FileSplit(cancerTrainRootDir, BaseImageLoader.ALLOWED_FORMATS, new Random());
 		testReader = new ImageRecordReader(IMG_WIDTH, IMG_HEIGHT, CHANNELS, labelGenerator);
 		testDataSet = new RecordReaderDataSetIterator(testReader, MINI_BATCH_SIZE, 1, N_LABELS);

@@ -69,11 +69,16 @@ public class LearnController {
 
 		for (int i = 0; i < trainsetModel.transformedDataEpochs; i++) {
 			for (int j = 0; j < transforms.length; j++) {
-				ImageTransform imageTransform = transforms[j];
-				ImageRecordReader trainReader = trainsetModel.getTrainReader();
-				trainReader.initialize((InputSplit) trainsetModel.returnModelDataSetIterator(), imageTransform);
-				trainsetModel.setTrainDataSet(new RecordReaderDataSetIterator(trainReader, trainsetModel.MINI_BATCH_SIZE, 1, trainsetModel.N_LABELS));
-				modelTransfer.fit(trainsetModel.returnModelDataSetIterator());
+				try {
+					ImageTransform imageTransform = transforms[j];
+					ImageRecordReader trainReader = trainsetModel.getTrainReader();
+					trainReader.initialize((InputSplit) trainsetModel.returnModelDataSetIterator(), imageTransform);
+					trainsetModel.setTrainDataSet(new RecordReaderDataSetIterator(trainReader, trainsetModel.MINI_BATCH_SIZE, 1, trainsetModel.N_LABELS));
+					modelTransfer.fit(trainsetModel.returnModelDataSetIterator());
+				} catch (Exception ex) {
+					ex.printStackTrace();
+					continue;
+				}
 			}
 		}
 
