@@ -33,5 +33,6 @@ public class TrainedModelService {
         }
         System.out.println(predict);
         return predict;
+
     }
 }

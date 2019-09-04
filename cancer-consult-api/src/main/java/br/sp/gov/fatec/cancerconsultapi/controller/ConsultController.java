@@ -2,7 +2,6 @@ package br.sp.gov.fatec.cancerconsultapi.controller;
 
 import br.sp.gov.fatec.cancerconsultapi.service.FileManagementService;
 import br.sp.gov.fatec.cancerconsultapi.service.TrainedModelService;
-import org.apache.commons.compress.utils.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
