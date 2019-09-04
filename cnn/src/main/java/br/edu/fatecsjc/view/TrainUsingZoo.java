@@ -64,8 +64,8 @@ public class TrainUsingZoo {
         ParentPathLabelGenerator labelGenerator = new ParentPathLabelGenerator();
         ImageTransform[] transforms = getTransforms();
 
-        File trainRootDir = Paths.get("/Users/giulianogimenez/Documents/isic/trainset").toFile();
-        File testRootDir = Paths.get("/Users/giulianogimenez/Documents/isic/testset").toFile();
+        File trainRootDir = Paths.get("E:\\isic\\trainset").toFile();
+        File testRootDir = Paths.get("E:\\isic\\testset").toFile();
         InputSplit trainData = new FileSplit(trainRootDir, BaseImageLoader.ALLOWED_FORMATS, new Random());
         InputSplit testData = new FileSplit(testRootDir, BaseImageLoader.ALLOWED_FORMATS, new Random());
         ImageRecordReader trainReader = new ImageRecordReader(IMG_WIDTH, IMG_HEIGHT, CHANNELS, labelGenerator);
