@@ -11,28 +11,22 @@ import java.nio.file.Paths;
 
 @Service
 public class TrainedModelService {
-    private String MODEL_FILE = "./skin-cancer-model.zip";
+    private String MODEL_FILE = "model.zip";
 
-    public int[] consultTrainedModel(String filename) throws IOException {
-        String[] labels = { "cinco_centavos", "cinquenta_centavos", "dez_centavos", "um_real", "vinte_cinco_centavos"} ;
-
+    public String[] consultTrainedModel(String filename) throws IOException {
+        String[] labels = { "benign", "malignant"} ;
         MultiLayerNetwork model = ModelSerializer.restoreMultiLayerNetwork(Paths.get(MODEL_FILE).toFile());
         model.init();
-        NativeImageLoader loader1 = new NativeImageLoader(128, 128, 3);
-        NativeImageLoader loader2 = new NativeImageLoader(128, 128, 3);
+        NativeImageLoader loader1 = new NativeImageLoader(100, 100, 3);
         INDArray img = loader1.asMatrix(Paths.get(filename).toFile());
         INDArray output1 = model.output(img);
+        String[] result = {"", ""};
         for (int i = 0; i < labels.length; i++) {
             float double1 = Math.abs(output1.getFloat(i));
             if(double1 > 0.0)
                 System.out.println(labels[i] + ": " + double1 + "%");
+                result[i] = labels[i] + " [" + Double.toString(double1 * 100.0)  + "%]";
         }
-        int[] predict = model.predict(img);
-        for (int i = 0; i < predict.length; i++) {
-            System.out.println(predict[i]);
-        }
-        System.out.println(predict);
-        return predict;
-
+        return result;
     }
 }

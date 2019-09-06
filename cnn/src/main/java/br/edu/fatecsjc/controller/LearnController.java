@@ -47,7 +47,6 @@ public class LearnController {
 		ImageTransform[] transforms = getTransforms();
 		ComputationGraph initializedZooModel  = (ComputationGraph) trainsetModel.getZooModel().initPretrained(PretrainedType.IMAGENET);
 		FineTuneConfiguration fineTuneConf = new FineTuneConfiguration.Builder()
-	            .learningRate(0.0001)
 	            .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
 	            .updater(Updater.NESTEROVS)
 	            .seed(123)
@@ -86,7 +85,7 @@ public class LearnController {
 		TestsetModel testsetModel = new TestsetModel();
 		while (testsetModel.returnModelDataSetIterator().hasNext()) {
 			DataSet next = testsetModel.returnModelDataSetIterator().next();
-			INDArray[] output = modelTransfer.output(next.getFeatureMatrix());
+			INDArray[] output = modelTransfer.output(next.getFeatures());
 			for (int i = 0; i < output.length; i++) {
 				eval.eval(next.getLabels(), output[i]);
 			}

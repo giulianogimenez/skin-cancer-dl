@@ -24,7 +24,7 @@ public class TestsetModel implements ConfigInterface {
 		InputSplit trainData = new FileSplit(cancerTrainRootDir, BaseImageLoader.ALLOWED_FORMATS, new Random());
 		testReader = new ImageRecordReader(IMG_WIDTH, IMG_HEIGHT, CHANNELS, labelGenerator);
 		testDataSet = new RecordReaderDataSetIterator(testReader, MINI_BATCH_SIZE, 1, N_LABELS);
-		this.zooModel = new ResNet50(N_LABELS, SEED, 1);
+//		this.zooModel = new ResNet50(N_LABELS, SEED, 1);
 		testReader.initialize(trainData);
 	}
 	

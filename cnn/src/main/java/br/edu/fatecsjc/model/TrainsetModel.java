@@ -24,7 +24,7 @@ public class TrainsetModel implements ConfigInterface {
 		InputSplit trainData = new FileSplit(cancerTrainRootDir, BaseImageLoader.ALLOWED_FORMATS, new Random());
 		trainReader = new ImageRecordReader(IMG_WIDTH, IMG_HEIGHT, CHANNELS, labelGenerator);
 		trainDataSet = new RecordReaderDataSetIterator(trainReader, MINI_BATCH_SIZE, 1, N_LABELS);
-		this.zooModel = new ResNet50(N_LABELS, SEED, 1);
+//		this.zooModel = new ResNet50(N_LABELS, SEED, 1);
 		trainReader.initialize(trainData);
 	}
 	
