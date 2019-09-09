@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 
 @Service
 public class TrainedModelService {
-    private String MODEL_FILE = "skin-cancer-model-77.zip";
+    private String MODEL_FILE = "model.zip";
 
     public String[] consultTrainedModel(String filename) throws IOException {
         String[] labels = { "benign", "malignant"} ;
