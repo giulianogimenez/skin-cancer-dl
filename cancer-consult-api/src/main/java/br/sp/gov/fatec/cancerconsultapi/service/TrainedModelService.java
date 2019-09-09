@@ -11,13 +11,13 @@ import java.nio.file.Paths;
 
 @Service
 public class TrainedModelService {
-    private String MODEL_FILE = "model.zip";
+    private String MODEL_FILE = "skin-cancer-model-77.zip";
 
     public String[] consultTrainedModel(String filename) throws IOException {
         String[] labels = { "benign", "malignant"} ;
         MultiLayerNetwork model = ModelSerializer.restoreMultiLayerNetwork(Paths.get(MODEL_FILE).toFile());
         model.init();
-        NativeImageLoader loader1 = new NativeImageLoader(100, 100, 3);
+        NativeImageLoader loader1 = new NativeImageLoader(262, 350, 3);
         INDArray img = loader1.asMatrix(Paths.get(filename).toFile());
         INDArray output1 = model.output(img);
         String[] result = {"", ""};

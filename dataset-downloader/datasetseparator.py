@@ -5,7 +5,7 @@ class DatasetSeparator():
     def __init__(self):
         self.createDataSetFolder("trainset")
         self.createDataSetFolder("testset")
-        malignant_count = len(os.listdir(os.getenv("DATASET_PATH") + "malignant"))
+        malignant_count = 1300 #len(os.listdir(os.getenv("DATASET_PATH") + "malignant"))
         m_testset_count = int((malignant_count * 20) / 100)
         m_trainset_count = malignant_count - m_testset_count
         i = 1

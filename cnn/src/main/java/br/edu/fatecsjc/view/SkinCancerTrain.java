@@ -48,8 +48,8 @@ import java.util.Random;
 import static java.lang.Math.toIntExact;
 public class SkinCancerTrain {
     protected static final Logger log = LoggerFactory.getLogger(SkinCancerTrain.class);
-    protected static int height = 100;
-    protected static int width = 100;
+    protected static int height = 262;
+    protected static int width = 350;
     protected static int channels = 3;
     protected static int batchSize = 20;
 
@@ -57,7 +57,7 @@ public class SkinCancerTrain {
     protected static Random rng = new Random(seed);
     protected static int epochs = 100;
     protected static double splitTrainTest = 0.8;
-    protected static int maxPathsPerLabel=18;
+    protected static int maxPathsPerLabel=1301;
 
     protected static String modelType = "LeNet"; // LeNet, AlexNet or Custom but you need to fill it out
     private int numLabels;
@@ -81,7 +81,7 @@ public class SkinCancerTrain {
         BalancedPathFilter pathFilter = new BalancedPathFilter(rng, labelMaker, numExamples, numLabels, maxPathsPerLabel);
 
         /**
-         * Data Setup -> train test split
+         * Data Setup -> train test split58+
          *  - inputSplit = define train and test split
          **/
         InputSplit[] inputSplit = fileSplit.sample(pathFilter, splitTrainTest, 1 - splitTrainTest);

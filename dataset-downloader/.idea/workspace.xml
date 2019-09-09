@@ -2,25 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef78d702-3b16-4360-b480-58af0ff6aea6" name="Default Changelist" comment="Subindo um separador de trainset e dataset">
-      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cancer-consult-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/src/main/java/br/sp/gov/fatec/cancerconsultapi/controller/ConsultController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cancer-consult-api/src/main/java/br/sp/gov/fatec/cancerconsultapi/controller/ConsultController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/src/main/java/br/sp/gov/fatec/cancerconsultapi/service/TrainedModelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cancer-consult-api/src/main/java/br/sp/gov/fatec/cancerconsultapi/service/TrainedModelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/20190905213632.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/20190905214130.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/20190905214221.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/20190905214233.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/20190905214253.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/20190905214301.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/20190905214350.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/20190905214404.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/20190905214407.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/20190905214409.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/20190905214419.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cancer-consult-api/model.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../cancer-consult-api/model.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cnn/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/latest-output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/latest-output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/skin-cancer-model.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/src/main/java/br/edu/fatecsjc/controller/LearnController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/src/main/java/br/edu/fatecsjc/controller/LearnController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/src/main/java/br/edu/fatecsjc/model/TestsetModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/src/main/java/br/edu/fatecsjc/model/TestsetModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/src/main/java/br/edu/fatecsjc/model/TrainsetModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/src/main/java/br/edu/fatecsjc/model/TrainsetModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/src/main/java/br/edu/fatecsjc/view/TrainUsingZoo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/controller/LearnController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/controller/LearnController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/controller/LearnController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/controller/LearnController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/model/ConfigInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/model/ConfigInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/model/TestsetModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/model/TestsetModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/model/TrainsetModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/model/TrainsetModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/view/DiagnosticView.class" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/view/DiagnosticView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/view/TrainUsingZoo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cnn/model.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/model.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cnn/src/main/java/br/edu/fatecsjc/view/SkinCancerTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/src/main/java/br/edu/fatecsjc/view/SkinCancerTrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/view/SkinCancerTrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/../cnn/target/classes/br/edu/fatecsjc/view/SkinCancerTrain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasetseparator.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasetseparator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,11 +36,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="811" />
   </component>
   <component name="ProjectId" id="1QOsF6I6JBkg0UACsgdUiYYXvWe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
