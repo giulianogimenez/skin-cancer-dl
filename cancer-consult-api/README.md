@@ -1,2 +1,3 @@
-![](https://img.shields.io/maven-central/v/org.deeplearning4j/deeplearning4j-core/1.0.0-beta4)
-![](https://img.shields.io/maven-central/v/org.springframework.boot/spring-boot-starter-web/2.2.0.M5)
+![](https://img.shields.io/badge/Java%20version-1.8-green)
+![](https://img.shields.io/badge/Maven%20version-4.0.0-brightgreen)
+![](https://img.shields.io/badge/Spring%20Boot-2.2.0_M5-yellowgreen)
