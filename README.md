@@ -1,4 +1,6 @@
 # Redes neurais para diagnósticos de câncer de pele
+![](https://img.shields.io/github/last-commit/giulianogimenez/skin-cancer-dl)
+![](https://img.shields.io/github/repo-size/giulianogimenez/skin-cancer-dl)
 
 Projeto realizado para a **Faculdade de Tecnologia de São José dos Campos - SP (FATEC SJC)** para o trabalho de graduação do curso superior de tecnologia em Banco de Dados, realizado por mim e orientado pelo professor Me. Giuliano Araujo Bertoti.
 
