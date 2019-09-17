@@ -1,1 +1,1 @@
-![](https://img.shields.io/pypi/pyversions/giulianogimenez/PyPIVersion)
+![](.. image:: https://img.shields.io/pypi/pyversions/giulianogimenez/PythonVersion   :alt: PyPI - Python Version)
