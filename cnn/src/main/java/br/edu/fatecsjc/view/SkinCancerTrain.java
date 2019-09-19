@@ -57,16 +57,16 @@ public class SkinCancerTrain {
     protected static Random rng = new Random(seed);
     protected static int epochs = 100;
     protected static double splitTrainTest = 0.8;
-    protected static int maxPathsPerLabel=1301;
+    protected static int maxPathsPerLabel=2296;
 
-    protected static String modelType = "LeNet"; // LeNet, AlexNet or Custom but you need to fill it out
+    protected static String modelType = "AlexNet"; // LeNet, AlexNet or Custom but you need to fill it out
     private int numLabels;
 
     public static String dataLocalPath;
 
     public void run(String[] args) throws Exception {
 
-        dataLocalPath = "E:\\isic\\trainset\\";
+        dataLocalPath = "E:\\isic";
         /**cd
          * Data Setup -> organize and limit data file paths:
          *  - mainPath = path to image files
@@ -177,7 +177,7 @@ public class SkinCancerTrain {
         System.out.print("\nFor a single example that is labeled " + expectedResult + " the model predicted " + modelPrediction + "\n\n");
 
         log.info("Save model....");
-        network.save(new File("model.zip"));
+        network.save(new File(modelType + "-model.zip"));
         log.info("****************Example finished********************");
     }
 

@@ -49,9 +49,9 @@ public class SkinCancerZooModelTrain {
     static int IMG_WIDTH = 224;
     static int IMG_HEIGHT = 224;
 
-    static int N_LABELS = 5;
+    static int N_LABELS = 2;
 
-    static int numEpochs = 50, transformedDataEpochs = 5;
+    static int numEpochs = 50, transformedDataEpochs = 2;
 
     private static Logger log = LoggerFactory.getLogger(SkinCancerZooModelTrain.class);
 
@@ -60,8 +60,8 @@ public class SkinCancerZooModelTrain {
         ParentPathLabelGenerator labelGenerator = new ParentPathLabelGenerator();
         ImageTransform[] transforms = getTransforms();
 
-        File coinsTrainRootDir = Paths.get("/home/wsiqueir/moedas/train").toFile();
-        File coinsTestRootDir = Paths.get("/home/wsiqueir/moedas/test").toFile();
+        File coinsTrainRootDir = Paths.get("E:\\isic\\trainset").toFile();
+        File coinsTestRootDir = Paths.get("E:\\isic\\testeset").toFile();
         InputSplit trainData = new FileSplit(coinsTrainRootDir, BaseImageLoader.ALLOWED_FORMATS, new Random());
         InputSplit testData = new FileSplit(coinsTestRootDir, BaseImageLoader.ALLOWED_FORMATS, new Random());
         ImageRecordReader trainReader = new ImageRecordReader(IMG_WIDTH, IMG_HEIGHT, CHANNELS, labelGenerator);
