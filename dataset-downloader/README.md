@@ -1,4 +1,5 @@
 # Dataset Downloader
+![](https://img.shields.io/pypi/pyversions/requests)
 
 ## Requisitos
 
