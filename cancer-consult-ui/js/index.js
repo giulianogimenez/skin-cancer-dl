@@ -24,4 +24,40 @@ $(function(){
             }
         });
     });
+
+    $("#btnSelecionarArquivo").click(function() {
+        $("#imgCancer").click();
+    });
+
+    $("#imgCancer").change(function() {
+        readURL(this);
+    });
+
+    $("#btnCancelar").click(function() {
+        $("#btnSelecionarArquivo").prop("hidden", false);
+        $("#imgCancer").files = null;
+        $('#imgToUpload').attr('src', '');
+        $("#spanName").html('');
+        $(this).prop("hidden", true);
+        $("#btnEnviar").prop("hidden", true);
+    });
+
+
 });
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    $("#spanName").html(input.files[0].name);
+    $("#btnSelecionarArquivo").prop("hidden", true);
+    reader.onload = function(e) {
+      $('#imgToUpload').attr('src', e.target.result);
+    }
+    $("#btnCancelar").prop("hidden", false);
+    $("#btnEnviar").prop("hidden", false);
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+

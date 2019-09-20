@@ -5,18 +5,43 @@
         <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/js/index.js"></script>
+        <link href="/fontawesome-free-5.10.2-web/css/all.css" rel="stylesheet">
         <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="/css/index.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <div class="container">
-            <h1>Análise de lesão de pele</h1>
-            <p>A consulta poderá ser feita a partir de fotos tiradas por vídeos dematoscópios digitais. Efetue o upload de imagens do tipo JPG através do campo abaixo.</p>
-            <div class="form-group">
-                <label for="imgCancer">Example file input</label>
-                <input type="file" class="form-control-file" id="imgCancer">
-            </div>
-            <button id="btnEnviar" class="btn btn-primary btn-block">Enviar</button>
-            <div id="resposta">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="content">
+                    <h1>Análise de lesão de pele</h1>
+                    <div class="main-topic">
+                        <div class="topic">
+                            <h3><i class="fas fa-brain"></i> Redes neurais</h3>
+                            <p>As imagens serão analisadas por redes neurais treinadas e darão uma opinião com um percentual de chances.</p>
+                        </div>
+                        <div class="topic">
+                            <h3><i class="fas fa-video"></i> Imagens</h3>
+                            <p>A consulta poderá ser feita a partir de fotos tiradas por vídeos dematoscópios digitais. Efetue o upload de imagens do tipo JPG através do campo abaixo.</p>
+                        </div>
+                        <div class="topic">
+                            <h3><i class="fas fa-user-md"></i> Tecnologia na saúde</h3>
+                            <p>Esta ferramenta é uma base de estudos de redes neurais na área da saúde. Em caso de dúvidas, procure seu médico.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button id="btnSelecionarArquivo" class="btn btn-info btn-block"><i class="fas fa-image"></i> Escolher imagem</button>
+                        <input type="file" class="form-control-file" id="imgCancer">
+                    </div>
+                    <div id="imagePreview">
+                        <img id="imgToUpload" width="400px" /><br>
+                        <span id="spanName"></span><br>
+                        <button id="btnEnviar" hidden class="btn btn-primary"><i class="fas fa-file-upload"></i> Enviar</button>
+                        <button id="btnCancelar" hidden class="btn btn-danger"><i class="fas fa-ban"></i> Cancelar</button>
+                    </div>
+
+                    <div id="resposta">
+                    </div>
+                </div>
             </div>
         </div>
 

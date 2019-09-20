@@ -1,0 +1,45 @@
+html,body {
+    height:100%;
+}
+
+.container-fluid {
+    background-image: url('../imgs/bg-banner.jpg');
+    background-size: cover;
+    padding: 0;
+    height:100%;
+}
+
+.content {
+    width: 100%;
+    padding: 20px;
+    padding-top: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+    height:100%;
+}
+
+h1, h3 {
+    color: #5AB8B6;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+#imagePreview {
+    text-align: center;
+}
+
+.main-topic {
+    padding-left: 8%;
+}
+
+.topic {
+    float: left;
+    width: 300px;
+    height: 300px;
+    border: #fff 1px solid;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
