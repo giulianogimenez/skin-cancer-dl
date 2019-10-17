@@ -1,0 +1,22 @@
+.titulo-branco {
+    font-size: 50px;
+    font-family: verdana;
+    color: #ffffff;
+}
+
+.titulo-verde {
+    font-size: 10px;
+    font-family: verdana;
+    color: #00ff00;
+}
+
+#titulo {
+    margin-left:42%;
+}
+
+body {
+    background-color: #030F20;
+}
+
+
+
