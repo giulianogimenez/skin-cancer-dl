@@ -36,7 +36,7 @@ $(function(){
     $("#btnCancelar").click(function() {
         $("#btnSelecionarArquivo").prop("hidden", false);
         $("#imgCancer").files = null;
-        $('#imgToUpload').attr('src', '');
+        $('#imgToUpload').removeAttr('src');
         $("#spanName").html('');
         $(this).prop("hidden", true);
         $("#btnEnviar").prop("hidden", true);
