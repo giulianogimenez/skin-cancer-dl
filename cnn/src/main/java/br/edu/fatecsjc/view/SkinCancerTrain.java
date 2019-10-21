@@ -1,4 +1,5 @@
 package br.edu.fatecsjc.view;
+
 import org.apache.commons.io.FilenameUtils;
 import org.datavec.api.io.filters.BalancedPathFilter;
 import org.datavec.api.io.labels.ParentPathLabelGenerator;
@@ -46,6 +47,7 @@ import java.util.List;
 import java.util.Random;
 
 import static java.lang.Math.toIntExact;
+
 public class SkinCancerTrain {
     protected static final Logger log = LoggerFactory.getLogger(SkinCancerTrain.class);
     protected static int height = 262;
@@ -57,7 +59,7 @@ public class SkinCancerTrain {
     protected static Random rng = new Random(seed);
     protected static int epochs = 100;
     protected static double splitTrainTest = 0.8;
-    protected static int maxPathsPerLabel=2296;
+    protected static int maxPathsPerLabel = 2296;
 
     protected static String modelType = "AlexNet"; // LeNet, AlexNet or Custom but you need to fill it out
     private int numLabels;
@@ -96,11 +98,11 @@ public class SkinCancerTrain {
         ImageTransform flipTransform2 = new FlipImageTransform(new Random(123));
         ImageTransform warpTransform = new WarpImageTransform(rng, 42);
         boolean shuffle = false;
-        List<Pair<ImageTransform,Double>> pipeline = Arrays.asList(new Pair<>(flipTransform1,0.9),
-                new Pair<>(flipTransform2,0.8),
-                new Pair<>(warpTransform,0.5));
+        List<Pair<ImageTransform, Double>> pipeline = Arrays.asList(new Pair<>(flipTransform1, 0.9),
+                new Pair<>(flipTransform2, 0.8),
+                new Pair<>(warpTransform, 0.5));
 
-        ImageTransform transform = new PipelineImageTransform(pipeline,shuffle);
+        ImageTransform transform = new PipelineImageTransform(pipeline, shuffle);
         /**
          * Data Setup -> normalization
          *  - how to normalize images and generate large dataset to train on
@@ -150,7 +152,7 @@ public class SkinCancerTrain {
         testIter.setPreProcessor(scaler);
 
         // listeners
-        network.setListeners(new StatsListener( statsStorage), new ScoreIterationListener(1), new EvaluativeListener(testIter, 1, InvocationType.EPOCH_END));
+        network.setListeners(new StatsListener(statsStorage), new ScoreIterationListener(1), new EvaluativeListener(testIter, 1, InvocationType.EPOCH_END));
 
         // Train without transformations
         trainRR.initialize(trainData, null);
@@ -186,15 +188,15 @@ public class SkinCancerTrain {
     }
 
     private ConvolutionLayer conv3x3(String name, int out, double bias) {
-        return new ConvolutionLayer.Builder(new int[]{3,3}, new int[] {1,1}, new int[] {1,1}).name(name).nOut(out).biasInit(bias).build();
+        return new ConvolutionLayer.Builder(new int[]{3, 3}, new int[]{1, 1}, new int[]{1, 1}).name(name).nOut(out).biasInit(bias).build();
     }
 
     private ConvolutionLayer conv5x5(String name, int out, int[] stride, int[] pad, double bias) {
-        return new ConvolutionLayer.Builder(new int[]{5,5}, stride, pad).name(name).nOut(out).biasInit(bias).build();
+        return new ConvolutionLayer.Builder(new int[]{5, 5}, stride, pad).name(name).nOut(out).biasInit(bias).build();
     }
 
-    private SubsamplingLayer maxPool(String name,  int[] kernel) {
-        return new SubsamplingLayer.Builder(kernel, new int[]{2,2}).name(name).build();
+    private SubsamplingLayer maxPool(String name, int[] kernel) {
+        return new SubsamplingLayer.Builder(kernel, new int[]{2, 2}).name(name).build();
     }
 
     private DenseLayer fullyConnected(String name, int out, double bias, double dropOut, Distribution dist) {
@@ -214,10 +216,10 @@ public class SkinCancerTrain {
 //            .updater(new Nadam(1e-4))
                 .updater(new AdaDelta())
                 .list()
-                .layer(0, convInit("cnn1", channels, 50 ,  new int[]{5, 5}, new int[]{1, 1}, new int[]{0, 0}, 0))
-                .layer(1, maxPool("maxpool1", new int[]{2,2}))
+                .layer(0, convInit("cnn1", channels, 50, new int[]{5, 5}, new int[]{1, 1}, new int[]{0, 0}, 0))
+                .layer(1, maxPool("maxpool1", new int[]{2, 2}))
                 .layer(2, conv5x5("cnn2", 100, new int[]{5, 5}, new int[]{1, 1}, 0))
-                .layer(3, maxPool("maxool2", new int[]{2,2}))
+                .layer(3, maxPool("maxool2", new int[]{2, 2}))
                 .layer(4, new DenseLayer.Builder().nOut(500).build())
                 .layer(5, new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
                         .nOut(numLabels)
@@ -250,14 +252,14 @@ public class SkinCancerTrain {
                 .list()
                 .layer(convInit("cnn1", channels, 96, new int[]{11, 11}, new int[]{4, 4}, new int[]{3, 3}, 0))
                 .layer(new LocalResponseNormalization.Builder().name("lrn1").build())
-                .layer(maxPool("maxpool1", new int[]{3,3}))
-                .layer(conv5x5("cnn2", 256, new int[] {1,1}, new int[] {2,2}, nonZeroBias))
+                .layer(maxPool("maxpool1", new int[]{3, 3}))
+                .layer(conv5x5("cnn2", 256, new int[]{1, 1}, new int[]{2, 2}, nonZeroBias))
                 .layer(new LocalResponseNormalization.Builder().name("lrn2").build())
-                .layer(maxPool("maxpool2", new int[]{3,3}))
+                .layer(maxPool("maxpool2", new int[]{3, 3}))
                 .layer(conv3x3("cnn3", 384, 0))
                 .layer(conv3x3("cnn4", 384, nonZeroBias))
                 .layer(conv3x3("cnn5", 256, nonZeroBias))
-                .layer(maxPool("maxpool3", new int[]{3,3}))
+                .layer(maxPool("maxpool3", new int[]{3, 3}))
                 .layer(fullyConnected("ffn1", 4096, nonZeroBias, dropOut, new GaussianDistribution(0, 0.005)))
                 .layer(fullyConnected("ffn2", 4096, nonZeroBias, dropOut, new GaussianDistribution(0, 0.005)))
                 .layer(new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
