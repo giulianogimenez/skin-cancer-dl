@@ -4,6 +4,7 @@ $(function(){
     });
 
     $("#btnEnviar").click(function(){
+        $("#btnEnviar").prop("disabled", true);
         var data = new FormData();
         data.append("image", $("#imgCancer").prop("files")[0]);
         $("#resposta").html("");
@@ -20,7 +21,12 @@ $(function(){
                 alert(resp);
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-                $("#resposta").html(XMLHttpRequest.responseText);
+                $.each(JSON.parse(XMLHttpRequest.responseText), function(i, item){
+                    console.log(item);
+                    $("#resposta").html($("#resposta").html() + item.label + ": <strong>" + item.probability + "%</strong><br />");
+                    $("#imagePreview").prop("hidden", true);
+                });
+                $("#btnEnviar").prop("disabled", false);
             }
         });
     });
