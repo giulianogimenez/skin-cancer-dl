@@ -1,5 +1,6 @@
 package br.sp.gov.fatec.cancerconsultapi.controller;
 
+import br.sp.gov.fatec.cancerconsultapi.Result;
 import br.sp.gov.fatec.cancerconsultapi.service.FileManagementService;
 import br.sp.gov.fatec.cancerconsultapi.service.TrainedModelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.util.List;
 
 @Controller
 @RestController
@@ -27,12 +29,8 @@ public class ConsultController {
     public ResponseEntity<String> consult(@RequestParam("image") MultipartFile file) {
         try {
             String filename = fileManagementService.saveFile(file.getInputStream());
-            String[] result = trainedModelService.consultTrainedModel(filename);
-            String msg = "";
-            for (String r : result) {
-                msg += r + "\n";
-            }
-            return new ResponseEntity<>(msg, HttpStatus.OK);
+            List<Result> resultList = trainedModelService.consultTrainedModel(filename);
+            return new ResponseEntity(resultList, HttpStatus.OK);
         } catch (IOException e) {
             e.printStackTrace();
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_GATEWAY);
